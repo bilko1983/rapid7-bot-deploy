@@ -19,10 +19,8 @@ jobs:
           pip install requests
 
       - name: Run BotFactory script inline
-        # working-directory: ./rapid7-config
+        working-directory: ./rapid7-config
         env:
           API_KEY: ${{ secrets.INSIGHT_API_KEY }}  # Store this in GitHub repo secrets
         run: |
-          ls -R
-          pwd
-        # python deploy-bot.py
+          python deploy-bot.py
