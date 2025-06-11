@@ -9,6 +9,7 @@ on:
         default: ''
         type: choice
         options:
+          - rapid7-json-file
           - AdminPrivilegedCloudUserORRoles
           - CloudUserWithAPICredentialsAccessKeyAgeExceeds90Days
           - CriticalResourceRiskScoreJIRATicketCreation
