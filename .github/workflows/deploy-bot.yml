@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
       - name: Set up Python 3
         uses: actions/setup-python@v4
         with:
@@ -21,6 +24,6 @@ jobs:
       - name: Run BotFactory script inline
         working-directory: ./rapid7-config
         env:
-          API_KEY: ${{ secrets.INSIGHT_API_KEY }}  # Store this in GitHub repo secrets
+          API_KEY: ${{ secrets.INSIGHT_API_KEY }}
         run: |
           python deploy-bot.py
