@@ -1,0 +1,35 @@
+{
+    "name": "Example bot",
+    "description": "Demo for API documentation",
+    "severity": "low",
+    "category": "Security",
+    "ondemand_enabled": true,
+    "state": "PAUSED",
+    "instructions": {
+      "resource_types": [
+        "instance"
+      ],
+      "groups": [],
+      "filters": [
+        {
+          "config": {
+            "cores": 2
+          },
+          "name": "divvy.filter.instance_cores_exceeds_threshold"
+        }
+      ],
+      "schedule": null,
+      "schedule_description": null,
+      "ondemand_enabled": true,
+      "hookpoints": [],
+      "actions": [
+        {
+          "run_when_result_is": true,
+          "config": {
+            "hours": 0
+          },
+          "name": "divvy.action.scheduled_stop"
+        }
+     ]
+   }
+}
