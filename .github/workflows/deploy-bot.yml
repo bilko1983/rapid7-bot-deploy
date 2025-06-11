@@ -1,0 +1,25 @@
+name: Run BotFactory Script Inline
+
+on:
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  run-inline-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python 3
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run BotFactory script inline
+        env:
+          API_KEY: ${{ secrets.INSIGHT_API_KEY }}  # Store this in GitHub repo secrets
+        run: |
+          python deploy-bot.py
