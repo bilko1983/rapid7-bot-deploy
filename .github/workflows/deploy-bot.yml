@@ -2,6 +2,27 @@ name: Run BotFactory Script Inline
 
 on:
   workflow_dispatch:  # Allow manual triggering
+    inputs:
+      config:
+        description: 'Select configuration file'
+        required: true
+        default: ''
+        type: choice
+        options:
+          - Admin Privileged Cloud Users/Roles
+          - Cloud User With API Credentials Access Key Age Exceeds 90 Days
+          - Critical Resource Risk Score JIRA Ticket creation
+          - Critical & High Insight Vulnerabilities
+          - DEV - Recently Created IAM User or Role
+          - DEV - AWS Guard Duty Threat Findings
+          - PROD - Recently Created IAM User or Role
+          - PROD - AWS Guard Duty Threat Findings
+          - Exemption for Falco Service from Privileged Containers Insight
+          - Exemption for Falco Service from High risk host file system mounts Insight
+          - Exemption for EKS Instances which contain sensitive information in instance user data
+          - Exemption for EKS Instances from Multi-Tenant (AWS) Insight Resource
+          - Instances with Public SSH Access
+          - Storage Container exposed to the public
 
 jobs:
   run-inline-script:
