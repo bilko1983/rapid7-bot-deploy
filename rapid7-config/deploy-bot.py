@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 # Import necessary libraries
-import requests  # For making HTTP requests
-import argparse  # Allows arguments to be passed
-import json      # For loading JSON data from a file
+import requests
+import argparse
+import json
 import os
 
 # API key used to authenticate with the InsightCloudSec API
