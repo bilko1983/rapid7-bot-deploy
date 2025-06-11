@@ -2,6 +2,7 @@
 
 # Import necessary libraries
 import requests  # For making HTTP requests
+import argparse  # Allows arguments to be passed
 import json      # For loading JSON data from a file
 import os
 
@@ -17,6 +18,9 @@ ENDPOINT = "public/botfactory/bot/create"
 # Combine base URL and endpoint to get the full request URL
 URL = BASE_URL + ENDPOINT
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--config', required=True)
+args = parser.parse_args()
 # Load the JSON payload from a file
 # This file should contain the bot configuration in JSON format
 with open("rapid7-json-file.json", "r") as f:
