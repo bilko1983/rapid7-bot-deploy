@@ -5,7 +5,7 @@ on:
       config:
         description: 'Select configuration file'
         required: true
-        default: ' '
+        default: false
         type: choice
         options:
           - demo-rapid7-bot
