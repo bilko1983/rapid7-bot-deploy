@@ -5,10 +5,10 @@ on:
       config:
         description: 'Select configuration file'
         required: true
-        default: ''
+        default: ' '
         type: choice
         options:
-          - rapid7-json-file
+          - demo-rapid7-bot
           - AdminPrivilegedCloudUserORRoles
           - CloudUserWithAPICredentialsAccessKeyAgeExceeds90Days
           - CriticalResourceRiskScoreJIRATicketCreation
