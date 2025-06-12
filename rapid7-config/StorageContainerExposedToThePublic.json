@@ -1,0 +1,83 @@
+{
+ "badge_scope_operator": "OR",
+ "category": "Security",
+ "creation_timestamp": null,
+ "date_created": "2024-11-26 18:04:50",
+ "date_modified": "2025-05-30 16:09:28",
+ "description": "Identify storage containers that are exposed to the public.",
+ "detailed_logging": false,
+ "errors": [],
+ "event_failures": null,
+ "exemptions_count": null,
+ "hookpoint_created": null,
+ "hookpoint_created_delayed": null,
+ "hookpoint_destroyed": null,
+ "hookpoint_modified": null,
+ "hookpoint_modified_delayed": null,
+ "hookpoint_tags_modified": null,
+ "hookpoint_threat_finding_discovered": null,
+ "hookpoint_vulnerability_context_changes": null,
+ "insight_id": 165,
+ "insight_name": "Storage Container Exposed to the Public",
+ "insight_severity": 5,
+ "instructions": {
+  "actions": [
+   {
+    "config": {},
+    "name": "divvy.action.mark_non_compliant",
+    "run_when_result_is": true
+   },
+   {
+    "config": {
+     "assignee": "",
+     "components": "",
+     "custom_fields": "",
+     "description": "The following Cloud Storage Bucket has public access. \nPlease review and add additional ACL's if necessary:\n\n{{resource.serialize(indent=2)}}",
+     "duedate": "",
+     "issue_type": "Task",
+     "labels": "",
+     "priority": "",
+     "project": "SV",
+     "skip_duplicates": true,
+     "summary": "Cloud Storage Bucket has Public Access"
+    },
+    "name": "jira.action.create_issue",
+    "run_when_result_is": true
+   }
+  ],
+  "badges": [
+   {
+    "key": "system.resource_type",
+    "value": "cloud"
+   }
+  ],
+  "exclusion_badges": null,
+  "filters": [
+   {
+    "config": {},
+    "name": "divvy.query.storage_container_public"
+   }
+  ],
+  "groups": [],
+  "hookpoints": [],
+  "resource_types": [
+   "storagecontainer"
+  ],
+  "schedule": "{\"_type\": \"Daily\", \"time_of_day\": {\"_type\": \"TimeOfDay\", \"second\": 0, \"minute\": 0, \"hour\": 9}, \"exclude_days\": []}",
+  "schedule_description": "{\"_type\": \"Daily\", \"time_of_day\": {\"_type\": \"TimeOfDay\", \"second\": 0, \"minute\": 0, \"hour\": 9}, \"exclude_days\": []}"
+ },
+ "modified_timestamp": null,
+ "name": "Example Bot",
+ "next_scheduled_run": null,
+ "notes": null,
+ "owner": "divvyuser:2:",
+ "owner_name": "Bilal Khan",
+ "resource_id": "divvybot:1:6",
+ "schedule": null,
+ "scope": [],
+ "severity": "low",
+ "source": "backoffice",
+ "state": "RUNNING",
+ "valid": true,
+ "version": null
+}
