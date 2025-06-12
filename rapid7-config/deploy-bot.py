@@ -23,8 +23,8 @@ parser.add_argument('--config', required=True)
 args = parser.parse_args()
 # Load the JSON payload from a file
 # This file should contain the bot configuration in JSON format
-with open("rapid7-json-file.json", "r") as f:
-    data = json.load(f)
+with open(args.config) as f:
+    config = json.load(f)
 
 # Define the HTTP headers, including the API key and content type
 headers = {
