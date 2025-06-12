@@ -33,7 +33,7 @@ headers = {
 }
 
 # Make the POST request to the API with the headers and JSON payload
-response = requests.post(URL, headers=headers, json=data)
+response = requests.post(URL, headers=headers, json=config)
 
 # Output the HTTP status code to see if the request was successful
 print("Status Code:", response.status_code)
